@@ -1,0 +1,51 @@
+%% <letter/letter.tex> template 1.2 by Robin `ypid` Schneider <ypid23@aol.de>
+%% The current version can be found on: https://github.com/ypid/typesetting/blob/master/templates/letter/letter.tex
+%%% preamble
+%\listfiles %% listfiles to logfile
+\RequirePackage{RequirePackageRS}
+\documentclass[12pt,ngerman,personal_settings,address_Hermann]{scrlttr2}
+
+%% specific indications
+\renewcommand{\AuName}{Mathis}
+\hypersetup{pdftitle={Grafeneck -- Brief von Mauser an Veronika},
+	pdfsubject={Schreibaufgabe im Stil der Abschlussklausur},
+	pdfkeywords={Grafeneck -- Brief an Veronika | Klasse 12 | \AuName},
+	pdfauthor={\AuName},
+	pdfcreator={\AUTHOR}
+}
+\SetAUTHOR{4}{\AuName}
+\SetURL{http://ypid.files.wordpress.com/2013/04/grafeneck-mathis-brief_von_mauser_an_veronika.pdf}
+\SetGitURL{https://github.com/ypid/document-Grafeneck-Mathis-Brief_von_Mauser_an_Veronika}
+
+\setkomavar{date}{\printdate{1997-04-03}}
+\setkomavar{fromphone}{Du weißt schon~\dots}
+\setkomavar*{fromurl}{Blog \usekomavar{urlseparator}}
+\setkomavar{signature}{\hspace{2em}\usekomavar{fromname} \\[-3.6em]
+	\hspace{0.3em}\includegraphics[width=6cm]{files/signature/2-bg-rm}\vspace{-0.3cm}}
+
+\KOMAoptions{
+	fromphone		= false,		%% Setzen der Telefonnummer des Absenders
+	fromurl			= false,		%% Setzen einer Homepageadresse des Absenders
+}
+
+\Anschrift{Veronika}{Baader}{w}{Musterstraße}{23}{72525}{Buttenhausen}
+
+\begin{document}
+%\setkomavar{subject}{}
+\pagenumbering{arabic}
+\begin{letter}{\EmName\\ \EmAddress}
+\opening{Meine liebe Veronika!}
+
+\input{files/chapters/content}
+
+\closing{Alles Liebe}\renewcaptionname{ngerman}{\enclname}{Anlage}
+%\encl{handschriftlicher Brief}
+%\cc{Frau  \\ name2}
+\ps{PS: Wenn der ganze Trubel im Münzloch vorbei ist, können wir da wieder Lehm für dich holen.}
+\ps{PPS: Der Autor dieses hypothetischen Briefes ist \AuName.}
+
+\newpage
+\printURLlong
+\printlicense
+\end{letter}
+\end{document}
